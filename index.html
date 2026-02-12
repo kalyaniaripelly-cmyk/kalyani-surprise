@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Jogesh ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+    color: white;
+}
+
+.startScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #ff4e73;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.startScreen button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+    background: white;
+    color: #ff2e63;
+    cursor: pointer;
+}
+
+.card {
+    margin-top: 40px;
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 420px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    margin: 8px;
+}
+
+#yesBtn {
+    background-color: #ff2e63;
+    color: white;
+}
+
+#noBtn {
+    background-color: white;
+    color: #ff2e63;
+    position: absolute;
+}
+
+#hiddenMessage {
+    display: none;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.slideshow img {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(0); opacity:1;}
+    100% {transform: translateY(-100vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="startScreen" id="startScreen">
+<h2>Jogesh bby ❤️</h2>
+<p>Your Pandhi has a surprise for you 🐼💋</p>
+<button onclick="startLove()">Tap to Start 💖</button>
+</div>
+
+<audio id="bgMusic" loop>
+<source src="C:\Users\kalya\Downloads\oye-meghamla-320kbps_1v6rPtNI.mp3">
+</audio>
+
+<div class="card">
+<h1>Happy Valentine's Day Jogesh ❤️</h1>
+
+<p>
+I dont know exactly when i fell for you but what I know is You are the best thing happen to me✨  
+Do Remember until i exist you will be loved!!Baby I can promise you onething I'm ready to Grow Old with you😌I LOVE YOU MY BOY💕
+</p>
+
+<div class="slideshow">
+<img id="slide" src="photo1.jpg">
+</div>
+
+<h3>Will you be my Valentine? 💘</h3>
+
+<button id="yesBtn" onclick="showLove()">Yes ❤️</button>
+<button id="noBtn" onmouseover="moveButton()">No 🙈</button>
+
+<p id="hiddenMessage">
+I love every single second I spend with you 💕  
+Now come here… Pandhi needs hugs and kisses 😘💋  
+Forever yours ❤️
+</p>
+</div>
+
+<script>
+
+function startLove() {
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("bgMusic").play();
+}
+
+// Slideshow
+var images = ["photo1.jpg.jpeg", "photo2.jpg.jpeg","photo3.jpg.jpeg","photo4.jpg.jpeg","photo5.jpg.jpeg","photo6.jpg.jpeg","photo7.jpg.jpeg","photo8.jpg.jpeg"];
+var index = 0;
+
+setInterval(function() {
+    index = (index + 1) % images.length;
+    document.getElementById("slide").src = images[index];
+}, 2500);
+
+// Yes button
+function showLove() {
+    document.getElementById("hiddenMessage").style.display = "block";
+}
+
+// Running No button
+function moveButton() {
+    var button = document.getElementById("noBtn");
+    button.style.top = Math.random() * window.innerHeight + "px";
+    button.style.left = Math.random() * window.innerWidth + "px";
+}
+
+// Floating hearts
+setInterval(function() {
+    var heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    document.body.appendChild(heart);
+    setTimeout(function(){ heart.remove(); }, 6000);
+}, 400);
+
+</script>
+
+</body>
+</html>
